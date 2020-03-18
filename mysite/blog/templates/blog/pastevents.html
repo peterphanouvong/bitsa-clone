@@ -1,0 +1,122 @@
+{% extends 'blog/navbar.html' %}
+{% block content %}
+<title>BITSA | Past Events</title>
+<div class="portfolio-area portfolio-area-2 area-padding">
+    <div class="container">
+        <div class="row">
+            <!-- Start Portfolio -page -->
+            <div class="awesome-project fix">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="awesome-menu ">
+                        <ul class="portfolio-menu">
+                            <li><a href="#" class="active" data-filter=".all" >all</a></li>
+                            <li><a href="#" data-filter=".social">social</a></li>
+                            <li><a href="#" data-filter=".education">education</a></li>
+                            <li><a href="#" data-filter=".careers">careers</a></li>
+                        </ul>               
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% load static %}
+        <div class="portfolio-content-events">
+            <div class="all">
+                <h1 class="events-subtitle">All</h1>
+                {%for all_past_events in all_p_events %}
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="row blog-row events-row">
+                            <div class="row">
+                                <img class="events-img" src="{{all_past_events.cover_photo.url}}" alt="" />
+                            </div>
+                            <div class="events-detail">
+                                <h3 class="event-title">{{all_past_events.title}}</h3>
+                                <P class="events-dlt">{{all_past_events.date}} | {{all_past_events.location}} | {{all_past_events.time}}</P>
+                                <P class="events-description">{{all_past_events.description | truncatewords:20 }}</P>
+                                <a href="{{all_past_events.link}}">
+                                    <button class="btn btn-primary slide-btn slide-submit blog-btn">Go to FB Event!</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                <div class="events-subtitle events-empty">
+                    <h3>Sorry, there appears to be no past events</h3>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="social events">
+                <h1 class="events-subtitle">Social</h1>
+                {%for social_past_events in social_p_events %}
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="row blog-row events-row">
+                            <div class="row">
+                                <img class="events-img" src="{{social_past_events.cover_photo.url}}" alt="" />
+                            </div>
+                            <div class="events-detail">
+                                <h3 class="event-title">{{social_past_events.title}}</h3>
+                                <P class="events-dlt">{{social_past_events.date}} | {{social_past_events.location}} | {{social_past_events.time}}</P>
+                                <P class="events-description">{{social_past_events.description | truncatewords:20 }}</P>
+                                <a href="{{social_past_events.link}}">
+                                    <button class="btn btn-primary slide-btn slide-submit blog-btn">Go to FB Event!</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                <div class="events-subtitle events-empty">
+                    <h3>Sorry, there appears to be no past social events</h3>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="education events">
+                <h1 class="events-subtitle">Education</h1>
+                {%for education_past_events in education_p_events %}
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="row blog-row events-row">
+                            <div class="row">
+                                <img class="events-img" src="{{education_past_events.cover_photo.url}}" alt="" />
+                            </div>
+                            <div class="events-detail">
+                                <h3 class="event-title">{{education_past_events.title}}</h3>
+                                <P class="events-dlt">{{education_past_events.date}} | {{education_past_events.location}} | {{education_past_events.time}}</P>
+                                <P class="events-description">{{education_past_events.description | truncatewords:20 }}</P>
+                                <a href="{{education_past_events.link}}">
+                                    <button class="btn btn-primary slide-btn slide-submit blog-btn">Go to FB Event!</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                <div class="events-subtitle events-empty">
+                    <h3>Sorry, there appears to be no past education events</h3>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="careers events">
+                <h1 class="events-subtitle">Careers</h1>
+                {%for careers_past_events in careers_p_events %}
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="row blog-row events-row">
+                            <div class="row">
+                                <img class="events-img" src="{{careers_past_events.cover_photo.url}}" alt="" />
+                            </div>
+                            <div class="events-detail">
+                                <h3 class="event-title">{{careers_past_events.title}}</h3>
+                                <P class="events-dlt">{{careers_past_events.date}} | {{careers_past_events.location}} | {{careers_past_events.time}}</P>
+                                <P class="events-description">{{careers_past_events.description | truncatewords:20 }}</P>
+                                <a href="{{careers_past_events.link}}">
+                                    <button class="btn btn-primary slide-btn slide-submit blog-btn">Go to FB Event!</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                <div class="events-subtitle events-empty">
+                    <h3>Sorry, there appears to be no past careers events</h3>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>  
+</div>
+{% endblock %}

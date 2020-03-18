@@ -1,0 +1,136 @@
+{% extends 'blog/navbar.html' %}
+{% block content %}
+<title>BITSA | Our Team</title>
+ <!-- Start description Area -->
+    <div class="profile-area">
+        <div class="container">
+            <div class="profilerow">
+                <div class="row">
+                    <div class="awesome-project fix">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="awesome-menu ">
+                                <ul class="portfolio-menu">
+                                    <li><a href="#" class="active" data-filter=".2020">2020</a></li>
+                                    <li><a href="#" data-filter=".2019">2019</a></li>
+                                    <li><a href="#" data-filter=".2018">2018</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class = "portfolio-content"> -->
+            <div class="portfolio-content-ourteam">
+                <div class="2020">
+                    <div class="profilerow">
+                        <div class="row">
+                            <div class="section-head text-center">
+                                <h3>2020 Executives</h3>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row">
+                            {% for 2020_profile in profiles_2020 %}
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="profile-single">
+                                    <div class="profile-boxshadow">
+                                        <div class="profile-container">
+                                            <img src="{{ 2020_profile.image.url }}" alt="media\images\profile\default-profile.png">
+                                            <div class="overlay">
+                                                <div class="overlay-ourteam-text">Degree <p>{{2020_profile.degree}}</p></div>
+                                                <div class="overlay-ourteam-text">Favourite Hobby <p>{{2020_profile.hobby}}</p></div>
+                                                <div class="overlay-ourteam-text">BITSA in 1 word <p>{{2020_profile.one_word}}</p></div>
+                                                <div class="overlay-ourteam-text linkedin">
+                                                    <a target="_blank" class="linkedin" href="{{2020_profile.linkedin}}">
+                                                        <div class="fa fa-fw fa-2x fa-linkedin"></div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="profile-description">
+                                        <div class="section-head">
+                                            <h3>{{2020_profile.name}}</h3>
+                                            <p>{{2020_profile.position}}</p>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <a href="mailto: {{2020_profile.email}}">{{2020_profile.email}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                </div>
+                <div class="2019">
+                    <div class="profilerow">
+                        <div class="row">
+                            <div class="section-head text-center">
+                                <h3>2019 Executives</h3>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row">
+                            
+                        {% for 2019_profile in profiles_2019 %}
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="profile-single">
+                                    <div class="profile-boxshadow">
+                                        <img src="{{ 2019_profile.image.url }}" alt="">
+                                    </div>
+                                    <div class="profile-description">
+                                        <div class="section-head">
+                                            <h3>{{2019_profile.name}}</h3>
+                                            <p>{{2019_profile.position}}</p>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <a href="mailto: {{2019_profile.email}}">{{2019_profile.email}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+                </div>
+                <div class="2018">
+                    <div class="profilerow">
+                        <div class="row">
+                            <div class="section-head text-center">
+                                <h3>2018 Executives</h3>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="row">
+                            
+                        {% for 2018_profile in profiles_2018 %}
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <div class="profile-single">
+                                    <div class="profile-boxshadow">
+                                        <img src="{{ 2018_profile.image.url }}" alt="">
+                                    </div>
+                                    <div class="profile-description">
+                                        <div class="section-head">
+                                            <h3>{{2018_profile.name}}</h3>
+                                            <p>{{2018_profile.position}}</p>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <a href="mailto: {{2018_profile.email}}">{{2018_profile.email}}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End main content -->
+{% endblock %}

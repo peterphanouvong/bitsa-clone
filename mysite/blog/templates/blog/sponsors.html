@@ -1,0 +1,130 @@
+{% extends 'blog/navbar.html' %}
+{% block content %}
+<title>BITSA | Sponsors</title>
+<!-- Start Sponsors content area  -->
+<div class="sponsors-area area-padding">
+        <div class="container">
+
+
+            <div class="row">
+                <div class="col-md-12-sponsor">
+                    <div class="single-sponsors text-center">
+                        <a class=mobile-sponsor>Click on logo to find out more!</a>
+                        <h3>Principal Sponsors</h3>
+                        <hr/>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="row">
+            {% for p_sponsor in principal_sponsors %}
+                <div class="sponsors">
+                 <div class="col-md-12-sponsor">
+                        <div class="flip" id="principal">
+                            <div class="front rcorners">
+                                <img src = "{{ p_sponsor.image.url }}" alt= "{{ p_sponsor.sponsor }}"/>
+                                </div>
+                            <div class="back rcorners">
+                                <p>{{ p_sponsor.description }}</p>
+                                <p>Find out more: <a href="{{ p_sponsor.link }}" target="_blank">
+                                    <br>Click Here!</br>
+                                </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+            
+
+
+            <div class="row">
+                <div class="col-md-12-sponsor">
+                    <div class="single-sponsors text-center">
+                        <h4>Major Sponsors</h4>
+                        <hr/>
+                     </div>
+                </div>
+            </div>
+
+            
+            <div class="row">
+            {% for m_sponsor in major_sponsors %}
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="flip" id="major">
+                        <div class="front rcorners">
+                            <img src = "{{ m_sponsor.image.url }}" alt= "{{ m_sponsor.sponsor }}"/>
+                            </div>
+                        <div class="back rcorners">
+                            <p>{{ m_sponsor.description }}</p>
+                            <p>Find out more: <a href="{{ m_sponsor.link }}" target="_blank">
+                                <br>Click Here!</br>
+                            </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+             {% endfor %}
+            </div>
+            
+       
+
+            <div class="row">
+                <div class="col-md-12-sponsor">
+                    <div class="single-sponsors text-center">
+                        <h5>Supporting Sponsor</h5>
+                        <hr/>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for s_sponsor in supporting_sponsors %}
+                    <div class="col-md-12">
+                        <div class= "flip" id="supporting">
+                            <div class="front rcorners">
+                                <img src = "{{ s_sponsor.image.url }}" alt= "{{ s_sponsor.sponsor }}"/>
+                                </div>
+                            <div class="back rcorners">
+                                <p>{{ s_sponsor.description }}</p>
+                                <p>Find out more: <a href="{{ s_sponsor.link }}" target="_blank">
+                                    <br>Click Here!</br>
+                                </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+
+        <div class="row">
+            <div class="col-md-12-sponsor">
+                <div class="single-sponsors text-center">
+                    <h5>Affilliated With</h5>
+                    <hr/>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            {% for aff in affiliated_with %}
+            <div class="col-md-12">
+                <div class= "flip" id="affiliated">
+                    <div class= "front rcorners">
+                        <img src="{{aff.image.url}}" alt = "{{aff.sponsor}}"/>
+                    </div>
+                    <div class= "back rcorners">
+                        <p>{{aff.description}}</p>
+                        <p>Find out more: <a href="aff.link" target="_blank">
+                            <br>Click Here!</br>
+                        </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+</div>
+</div>
+{% endblock %}

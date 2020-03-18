@@ -1,0 +1,51 @@
+{% extends 'blog/navbar.html' %}
+{% block content %}
+<title>BITSA | Our Blog</title>
+<!-- Start description Area -->
+<div class="portfolio-area area-padding">
+  <div class="container">
+    <!-- Start Description area -page -->
+    <div class="blog-section-head text-center">
+      <ul>
+        <h1>Welcome to the BITSA blog!</h1>
+        <div class="blog_post">
+          {% for blog_post in blogs reversed%}
+          {% load static %}
+          <div class="row blog-row">
+            <div class="col-md-2 blog-col">
+              <div class="blog-date-parent">
+                <div class="blog-date-child">
+                  <img class="blog-date-icon" src="{% static 'blog/img/blog/calendar.png' %}" alt="" />
+                  <p class="blog-date">{{blog_post.pub_date}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 blog-col">
+              <a class="blog-pic-parent" href="{% url 'blog:blog_post' blog_post.id %}">
+                <img src="{{ blog_post.image.url }}" alt="" class="blog-pic">
+              </a>
+            </div>
+            <div class="col-md-6 blog-col">
+              <div class="blog-date-parent">
+                <div class="blog-date-child">
+                  <a href="{% url 'blog:blog_post' blog_post.id %}">
+                    <h1>
+                      <li class="blog-title">{{blog_post.blog_title}}</li>
+                    </h1>
+                  </a>
+                  <!-- <p>{{blog_post.description_text}}</p> -->
+                  <p>{{ blog_post.blog_content|truncatewords:20 }}</p>
+                  <a href="{% url 'blog:blog_post' blog_post.id %}">
+                    <button class="btn btn-primary slide-btn slide-submit blog-btn">Read More</button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

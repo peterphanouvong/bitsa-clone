@@ -1,0 +1,13 @@
+{% extends 'blog/navbar.html' %}
+{% block content %}
+<title>BITSA | {{title}}</title>
+<div class="content-area blog-post-padding">
+    <h1 class="blog-post-title">{{title}}</h1>
+    <img src="{{ blog.image.url }}" alt="" class="blog-post-pic">
+    <p class="blog-post-author">Published & Editied with care & love by the BITSA Publications Team &#x2764 </p>
+    <p class="blog-post-content">{{ blog_formatted }}</p>
+    <a href="{% url 'blog:blogs' %}">
+        <button class="btn btn-primary slide-btn slide-submit blog-post-btn">Go Back!</button>
+      </a>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+.blog-page {
+  background-color: white;
+  width:100%
+}
+
+.single-blog { 
+  width: 70%;
+  margin: 10% auto;
+  border-bottom: 1px solid ;
+}
+
+.blog-image {
+  width: 100%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+.blog-content {
+  width: 70%;
+  margin: 0 auto;
+  padding-bottom: 10px;
+}
+
+.top-blog-title {
+  padding-top: 10px;
+}

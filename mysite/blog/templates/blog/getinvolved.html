@@ -1,0 +1,98 @@
+{% extends 'blog/navbar.html' %}
+{% block content %}
+<title>BITSA | Get Involved</title>
+<div class="portfolio-area area-padding">
+    <div class="container">
+        <div class="row">
+            <!-- Start Description area -page -->
+            <div class="section-head">
+                <center>
+                    <h3>Get involved with BITSA!
+                    </h3>
+                </center>
+                <div class="content-section">
+                    <form id="form" action="javascript:;" onsubmit="insert_value()">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                            <!---<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
+                        </div>
+                        <div class="form-group">
+                            <label>zID</label>
+                            <input type="text" class="form-control" id="zID" placeholder="Your zID" required>
+                            <small>Make sure you include the 'z'!!</small>
+                        </div>
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Your email" required>
+                        </div>
+
+                        <!-- MAKE SURE TO HAVE AN INPUT FOR OTHER IF SELECTED-->
+
+                        <div id="degreeDiv" class="form-group">
+                            <label>Degree</label>
+                            <select id="degree" class="form-control" required>
+                                <option value="InfoSystems">Information Systems</option>
+                                <option value="Comm/InfoSystems">Commerce/Information Systems</option>
+                                <option value="Commerce">Commerce</option>
+                                <option value="Other">Other..</option>
+                            </select>
+                            <div id="degreeInput">
+                                <input type="text" class="form-control" id="otherDegree" placeholder="Your Degree">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Year</label>
+                            <select id="yearOfStudy" class="form-control" required>
+                                <option value="1st">1st year</option>
+                                <option value="2nd">2nd year</option>
+                                <option value="3rd">3rd year</option>
+                                <option value="4th or >">4th year or higher</option>
+                            </select>
+                        </div>
+                        <label>Are you an Arc member?</label> <br>
+                        <small>If not, we highly reccomend you register<a href="http://www.arc.unsw.edu.au/join" target="_blank">
+                                here</a></small> <br>
+                        <div class="form-check">
+                            <br>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="isArcMember"
+                                value="yes">
+                            <label class="form-check-label" for="exampleRadios1">Yes</label>
+                            <br>
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="isArcMember"
+                                value="no">
+                            <label class="form-check-label">No</label>
+                        </div>
+                        <br>
+                        <label>Do you want to join our mailing list?</label> <br>
+                        <small>Click 'YES' to stay in the loop with all out social, careers, education, IT and
+                            creative offerings!</small>
+                        <br>
+                        <div class="form-check">
+                            <br>
+                            <input class="form-check-input" type="radio" name="exampleRadios1" id="includeML"
+                                value="yes">
+                            <label class="form-check-label" for="exampleRadios1">Yes</label>
+                            <br>
+                            <input class="form-check-input" type="radio" name="exampleRadios1" id="includeML"
+                                value="no">
+                            <label class="form-check-label" for="exampleRadios1">No</label>
+                        </div>
+                        <br>
+
+                        <button type="submit" id="submit" class="btn btn-primary slide-btn slide-submit">Submit</button>
+                    </form>
+                </div>
+                <div id="Registered">
+                    <h2 class="post-form">Thank You for registering for BITSA</h2>
+                    <p class = "post-form">To go to the homepage press the button below</p>
+                    <button onclick="window.location.href = 'home';" type="button"
+                        id="home" class="btn btn-primary slide-btn slide-submit">Home!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End main content -->
+</div>
+
+{% endblock %}

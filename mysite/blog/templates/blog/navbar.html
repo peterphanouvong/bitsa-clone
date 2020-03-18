@@ -1,0 +1,281 @@
+{% load static %}
+<head>
+<!-- all css here -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- bootstrap v3.3.6 css -->
+<link rel="stylesheet" href="{% static 'blog/bootstrap.min.css' %}">
+<!-- meanmenu css -->
+<link rel="stylesheet" href="{% static 'blog/meanmenu.min.css' %}">
+<!-- owl-carousel css -->
+<link rel="stylesheet" href="{% static 'blog/owl.carousel.css' %}">
+<link rel="stylesheet" href="{% static 'blog/owl.transitions.css' %}">
+<!-- font-awesome css -->
+<link rel="stylesheet" href="{% static 'blog/font-awesome.min.css' %}">
+  <!-- Icon css -->
+<link rel="stylesheet" href="{% static 'blog/icon.css' %}">
+<!-- venobox css -->
+<link rel="stylesheet" href="{% static 'blog/venobox.css' %}">
+<!-- responsive css -->
+<link rel="stylesheet" href="{% static 'blog/style.css' %}">
+<link rel="stylesheet" href="{% static 'blog/responsive.css' %}">
+<!-- Favicon Link -->
+<link rel="shortcut icon" href="{% static 'blog/img/logo/favicon.ico' %}" type="image/x-icon" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- Meta Stuff -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <header>
+        <!-- header-area start -->
+        <div id="sticker" class="header-area default-header hidden-xs">
+            <div class="container">
+                <div class="row">
+                    <!-- logo start -->
+                    <div class="col-md-3 col-sm-3">
+                        <div class="logo">
+                            <!-- Brand -->
+                            <a class="navbar-brand page-scroll sticky-logo" href="home">
+                                <img src="{% static 'blog/img/logo/logowhitenarrower.png' %}" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <!-- logo end -->
+                    <div class="col-md-9 col-sm-9">
+                        <div class="header-right-link">
+                        </div>
+                        <!-- mainmenu start -->
+                        <nav class="navbar navbar-default">
+                            <div class="collapse navbar-collapse" id="navbar-example">
+                                <div class="main-menu">
+                                    <ul class="nav navbar-nav navbar-right">
+                                        <li><a class="pagess" href="{% url 'blog:home' %}">Home</a></li>
+                                        <li><a class="pagess" href="{% url 'blog:whatwedo' %}">About Us</a>
+                                        <ul class="sub-menu">
+                                                <li><a href="{% url 'blog:whatwedo' %}">What We Do</a></li>
+                                                <li><a href="{% url 'blog:ourteam' %}">Our Team</a></li>
+                                            </ul>
+                                        <li><a href="{% url 'blog:sponsors' %}">Sponsors</a></li>
+                                        <li><a class="pagess" href="{% url 'blog:events' %}">Events</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="{% url 'blog:currentevents' %}">Current Events</a></li>
+                                                <li><a href="{% url 'blog:pastevents' %}">Past Events</a></li>
+                                                
+                                            </ul>
+                                        </li>
+                                        <li><a href="{% url 'blog:blogs' %}">Our Blog</a></li>
+                                        <li><a href="{% url 'blog:bitsamag' %}">Bitsa Mag</a></li>
+                                        <li><a href="{% url 'blog:getinvolved' %}">Get Involved</a></li>
+                                        </li>
+                                        <!--<li><a href="blog.html">OUR BLOG</a></li>-->
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                        <!--Main menu end-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header-area end -->
+        <!-- mobile-menu-area start -->
+        <div class="mobile-menu-area hidden-lg hidden-md hidden-sm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mobile-menu">
+                            <div class="logo">
+                                <a href="{% url 'blog:home' %}"><img src="{% static 'blog/img/logo/mobilelogoblack.png' %}" alt="" /></a>
+                            </div>
+                            <nav id="dropdown">
+                                <ul>
+                                    <li><a class="pagess" href="{% url 'blog:home' %}">Home</a> </li>
+                                        <li><a href="#">About Us</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="{% url 'blog:whatwedo' %}">What We Do</a></li>
+                                                <li><a href="{% url 'blog:ourteam' %}">Our Team</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="{% url 'blog:sponsors' %}">Sponsors</a></li>
+                                        <li><a class="pagess" href="#">Events</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="{% url 'blog:currentevents' %}">Current Events</a></li>
+                                                <li><a href="{% url 'blog:pastevents' %}">Past Events</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="{% url 'blog:blogs' %}">Our Blog</a></li>
+                                        <li><a href="{% url 'blog:bitsamag' %}">Bitsa Mag</a></li>
+                                        <li><a href="{% url 'blog:getinvolved' %}">Get Involved</a></li>
+                                            </ul>
+                                        </li>
+                                </ul>
+                            </nav>
+                        </div>					
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- mobile-menu-area end -->
+    </header>
+{% if title == "Home" %}
+    <!-- Start Slider Area -->
+<div class="intro-area intro-default fix">
+    <div class="container-full">
+      <div class="row">
+        <div class="intro-carousel text-center">
+          <!-- Start Slider content -->
+          <div class="intro-content">
+            <div class="slider-img"><img src="{% static 'blog/img/background/1bitsaphotoFINAL.jpg' %}" alt="" class="slide-img"></div>
+            <div class="slide-content">
+              <h1 class="title1"> For all <span class="txt-rotate" data-period="2000" data-rotate='[ "tech enthusiasts.", "Infosys students."]'></span></h1>
+            </div>
+          </div>
+          <!-- End Slider content -->
+          <!-- Start Slider content -->
+          <div class="intro-content ">
+            <div class="slider-img">
+              <img src="{% static 'blog/img/background/bitsaphoto2.jpg' %}" alt="" class="slide-img">
+            </div>
+  
+            <div class="slide-content">
+              <h1 class="title1"> Relevant <span class="txt-rotate" data-period="2000" data-rotate='[ "social events.", "workshops.", "networking opportunities."]'>
+              </span></h1>
+            </div>
+          </div>
+  <!-- End Slider content -->
+
+  <!-- Start Slider content -->
+          <div class="intro-content ">
+            <div class="slider-img">
+              <img src="{% static 'blog/img/background/bitsaphoto3_1.jpg' %}" alt="" class="slide-img">
+            </div>
+  
+            <div class="slide-content">
+              <h1 class="title1"> Join us on OrgSync today!</h1>
+              <div class="slider-button">
+                <a class="slide-btn-index" href="https://member.arc.unsw.edu.au/s/clubdetail?clubid=0016F0000371VwQQAU">JOIN NOW</a>
+              </div>
+  
+            </div>
+          </div>
+  <!-- End Slider content -->
+        </div>
+      </div>
+    </div>	 
+</div>
+<div class="portfolio-area area-padding">
+    <div class="container">
+        <div class="row">
+        <!-- Start Description area -page -->
+            <div class="section-head text-center">
+                <h3>For Information Systems students and tech enthusiasts</h3>
+        
+                <p> BITSA serves to unite and empower all UNSW Information Systems students and tech enthusiasts, through actively providing an environment to share enjoyment, experiences and knowledge, to develop both academically and professionally.</p>
+        
+                <p> Since forming in 1988, we have been actively working to build a more cohesive community. In 2020, we are delivering more relevant events and opportunities to our members than ever before! </p>
+                <div class="slider-button">
+                    <a class="slide-btn" href="https://orgsync.com/81133/chapter">GET INVOLVED</a>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+</div>
+  <!-- End Slider Area -->
+{% else %}  
+    <div class="{{ page_area }}">
+        <div class="breadcrumb-overlay"></div>
+        <div class="display-table">
+            <div class="display-table-cell">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="breadcrumb text-center">
+                                <div class="section-headline white-headline text-center">
+                                    <h3>{{title}}</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+<footer class="section">
+    <!-- The container for the grid for the footer content -->
+  <div class="container">
+      <!-- Establishing the row in the grid for the footer content -->
+    <div class="row">
+        <!-- Establishing the column in the ratio 5 to 12 for Email -->
+        <div class="col-md-5" id="email">
+            <p id="emailP">Email - mail@bitsa.org.au </p>
+        </div>
+        <!-- Establishing the column in the ratio 1 to 12 for Facebook logo -->
+        <div class="col-md-1">
+            <section>
+                <a target="_blank" class="facebook" href="https://www.facebook.com/unswissociety/">
+                    <div class="fa fa-fw fa-2x fa-inverse fa-facebook"></div>
+                </a>
+            </section>
+        </div>
+        <!-- Establishing the column in the ratio 1 to 12 for Linkedin logo -->
+        <div class="col-md-1">
+            <section>
+                <a target="_blank" class="linkedin" href="https://www.linkedin.com/company/bitsa">
+                    <div class="fa fa-fw fa-2x fa-inverse fa-linkedin"></div>
+                </a>
+            </section>
+        </div>
+        <!-- Establishing the column in the ratio 5 to 12 for Address -->
+        <div class="col-md-5" id="address">
+            <p id="addressP">UNSW Australia </p>
+        </div>
+    </div>
+  </div>
+</footer>
+  
+
+<!-- modernizr css -->
+<script src="{% static 'blog/vendor/modernizr-2.8.3.min.js' %}"></script>
+<!-- jquery js -->
+<script src="{% static 'blog/vendor/jquery-1.12.4.min.js' %}"></script>
+<!-- Text Rotate js -->
+<script src="{% static 'blog/textRotate.js' %}"></script>
+<!-- bootstrap js -->
+<script src="{% static 'blog/bootstrap.min.js' %}"></script>
+<!-- owl-carousel js -->
+<script src="{% static 'blog/owl.carousel.min.js' %}"></script>
+<!-- isotope js -->
+<script src="{% static 'blog/isotope.pkgd.min.js' %}"></script>
+<!-- Meanmenu js -->
+<script src="{% static 'blog/jquery.meanmenu.js' %}"></script>
+<!-- Typed js -->
+<script src="{% static 'blog/typed.js' %}"></script>
+<!-- venobox js -->
+<script src="{% static 'blog/venobox.min.js' %}"></script>
+<!-- plugins js -->
+<script src="{% static 'blog/plugins.js' %}"></script>
+<!-- main js -->
+<script src="{% static 'blog/main.js' %}"></script>
+<!--Latest jquery version, i think the one above is outdated -->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<!-- flip js convert to Django syntax-->
+<script src="{% static 'blog/jquery.flip.min.js' %}"></script>
+<!--logo Flip settings-->
+<script>
+    $(function(){
+        $(".flip").flip({
+            trigger: 'click'
+        });
+    });
+</script>
+</body>
+
